@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     image: "yanwk/comfyui-boot:cu124-megapak"
     ports:
-      - "8188:8188"
+      - "8124:8188"
     volumes:
       - "./storage:/root"
     environment:

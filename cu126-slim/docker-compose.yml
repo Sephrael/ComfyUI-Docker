@@ -8,7 +8,7 @@ services:
       dockerfile: Dockerfile
     image: "yanwk/comfyui-boot:cu126-slim"
     ports:
-      - "8126:8188"
+      - "8188:8188"
     volumes:
       - "./storage:/root"
     environment:
