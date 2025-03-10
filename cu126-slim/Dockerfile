@@ -110,21 +110,24 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     && pip install \
         --upgrade pip wheel setuptools \
     && pip install \
-        --dry-run xformers torchvision torchaudio \
+        --dry-run torchvision torchaudio \
         --index-url https://download.pytorch.org/whl/cu126 \
-        --extra-index-url https://pypi.org/simple
+        --extra-index-url https://pypi.org/simple \
+    && pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install \
-        --no-deps xformers torch torchvision torchaudio \
+        --no-deps torch torchvision torchaudio \
         --index-url https://download.pytorch.org/whl/cu126 \
-        --extra-index-url https://pypi.org/simple
+        --extra-index-url https://pypi.org/simple \
+    && pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip install \
-        xformers torchvision torchaudio \
+        torchvision torchaudio \
         --index-url https://download.pytorch.org/whl/cu126 \
-        --extra-index-url https://pypi.org/simple
+        --extra-index-url https://pypi.org/simple \
+    && pip3 install -U xformers --index-url https://download.pytorch.org/whl/cu126
 
 # Bind libs (.so files)
 ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}\

@@ -2,7 +2,7 @@ services:
 
   comfyui:
     init: true
-    container_name: comfyui
+    container_name: comfyui_cu124_megapak
     build:
       context: .
       dockerfile: Dockerfile

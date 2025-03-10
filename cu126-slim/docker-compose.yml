@@ -2,13 +2,13 @@ services:
 
   comfyui:
     init: true
-    container_name: comfyui
+    container_name: comfyui_cu126_slim
     build:
       context: .
       dockerfile: Dockerfile
     image: "yanwk/comfyui-boot:cu126-slim"
     ports:
-      - "8188:8188"
+      - "8126:8188"
     volumes:
       - "./storage:/root"
     environment:
